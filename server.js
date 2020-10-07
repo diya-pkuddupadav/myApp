@@ -41,13 +41,10 @@ app.post('/Retrospective/New', (req, res) => {
     res.sendStatus(200);
 });
 
-if (process.env.NODE_ENV === "production") {
-  // Set the static assets folder (ie, client build)
-  app.use(express.static('Retrospective/New'));
-  app.get('*', (req,res) => {
-    res.sendFile(path.resolve('Retrospective', 'New'))
-  });
-}
+routes(app);
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.listen(HTTP_PORT, err => {
   if (err) {
