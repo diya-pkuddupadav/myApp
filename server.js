@@ -47,8 +47,8 @@ app.post('/Retrospective/New', (req, res) => {
 
 app.listen(HTTP_PORT, err => {
   if (err) {
-    console.error(err)
+    console.error(err);
   } else {
-    console.log('Listening at ' + HTTP_PORT)
+    console.log('Listening at ' + HTTP_PORT);
   }
 })
