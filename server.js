@@ -1,4 +1,4 @@
-  require('dotenv').config({ path: 'variables.env' });
+require('dotenv').config({ path: 'variables.env' });
 
 const express = require('express')
 const path = require('path')
@@ -34,10 +34,6 @@ app.use((req, res, next) => {
 })
 
 //app.set('PORT', process.env.PORT || 5000);
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/index.html'));
-});
 
 app.post('/Retrospective/New', (req, res) => {
   const payload = req.body;
