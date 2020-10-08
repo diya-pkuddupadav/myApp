@@ -41,12 +41,7 @@ app.post('/Retrospective/New', (req, res) => {
     res.sendStatus(200);
 });
 
-  app.get('*', (req, res) => {
-    
-    console.log(__dirname);
-    console.log(req);
-    console.log(res);
-  });
+  app.get('*', (req, res) => res.render('Retrospective/New'));
 
 app.listen(HTTP_PORT, err => {
   if (err) {
